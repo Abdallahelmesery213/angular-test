@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { SquarePipe } from './components/Pipes/square.pipe';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
-import { EmployeeDetailsComponent } from './services/employee-details/employee-details.component';
 import { EmployeeListComponent } from './services/employee-list/employee-list.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -15,12 +15,12 @@ import { EmployeeListComponent } from './services/employee-list/employee-list.co
     SquarePipe,
     ParentComponent,
     ChildComponent,
-    EmployeeDetailsComponent,
     EmployeeListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
