@@ -17,7 +17,7 @@ export class EmployeeService {
     // ]
     return this.http.get<IEmployee[]>(this._url).pipe(catchError((err) =>
     {
-      return throwError(err.message || "server error");
+      return throwError(()=> err.message || "server error");
     }));
   }
 }

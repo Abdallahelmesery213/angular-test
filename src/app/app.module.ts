@@ -8,6 +8,8 @@ import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
 import { EmployeeListComponent } from './services/employee-list/employee-list.component';
 import { HttpClientModule } from "@angular/common/http";
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { AboutPageComponent } from './components/about-page/about-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HttpClientModule } from "@angular/common/http";
     SquarePipe,
     ParentComponent,
     ChildComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    HomePageComponent,
+    AboutPageComponent
   ],
   imports: [
     BrowserModule,
