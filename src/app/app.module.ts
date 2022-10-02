@@ -10,6 +10,11 @@ import { EmployeeListComponent } from './services/employee-list/employee-list.co
 import { HttpClientModule } from "@angular/common/http";
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import { DepartmentDetailsComponent } from './components/department-details/department-details.component';
+import { DepartmentsComponent } from './components/departments/departments.component';
+import { DepartmentOverviewComponent } from './components/department-overview/department-overview.component';
+import { DepartmentContactComponent } from './components/department-contact/department-contact.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,12 @@ import { AboutPageComponent } from './components/about-page/about-page.component
     ChildComponent,
     EmployeeListComponent,
     HomePageComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    NotFoundPageComponent,
+    DepartmentDetailsComponent,
+    DepartmentsComponent,
+    DepartmentOverviewComponent,
+    DepartmentContactComponent
   ],
   imports: [
     BrowserModule,

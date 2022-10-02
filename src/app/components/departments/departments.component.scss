@@ -1,0 +1,14 @@
+ul li {
+  cursor: pointer;
+  list-style: none;
+}
+ul li:hover{
+  color: blue;
+}
+.selected{
+  background-color: black;
+  color: #fff;
+  display: inline-block;
+  width: auto;
+}
+

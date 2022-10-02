@@ -1,0 +1,16 @@
+<p>You Select Department with ID {{depId}}</p>
+
+<button>
+  <a (click)="goPrev()"> Go To Prev ID</a>
+</button>
+
+<button>
+  <a (click)="goNext()"> Go To Next ID</a>
+</button> <br>
+
+<button (click)="goToDepts()">Back</button>
+<br>
+<br>
+<button (click)="goToOverview()">Go To Overview</button>
+<button (click)="goToContact()">Go To contact</button>
+<router-outlet></router-outlet>

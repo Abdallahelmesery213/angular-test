@@ -1,0 +1,7 @@
+<p>departments works!</p>
+<ul>
+  <li *ngFor="let department of departments" (click)="goToDepDetails(department)">
+    {{department.id}}- {{department.name}}
+  </li>
+</ul>
+
