@@ -1,0 +1,46 @@
+<div class="container">
+  <form #userForm="ngForm" novalidate (ngSubmit)="submitData()">
+    {{userForm.value|json}}
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" required name="textName" #text="ngModel" [class.is-valid]="text.invalid && text.touched" [(ngModel)]="userModel.name" class="form-control" />
+      <!-- {{text.className}} -->
+      <small [class.d-none]="text.valid || text.untouched">Name is required</small>
+    </div>
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="email" name="emailText" #email="ngModel" [(ngModel)]="userModel.email" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Telephone:</label>
+      <input type="tel" name="telphone" required #phone="ngModel" pattern="^\d{11}$" [class.is-valid]="phone.invalid&&phone.touched" [(ngModel)]="userModel.phone" class="form-control" />
+      <div *ngIf="phone.errors && phone.touched">
+        <small *ngIf="phone.errors['required']">Phone is Required </small>
+        <small *ngIf="phone.errors['pattern']">Phone must be 11 digit </small>
+      </div>
+    </div>
+    <div class="mb-4">
+      <select class="custom-select" name="ddcTopic" #topic="ngModel" [(ngModel)]="userModel.topic">
+        <option selected>
+          I'm Interested In
+        </option>
+        <option *ngFor="let topic of topics">
+          {{topic}}
+        </option>
+      </select>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" value="morning" #timeSection="ngModel" [(ngModel)]="userModel.timeSection" name="timeSection">
+      <label class="form-check-label me-3">Morning</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" value="evening" #timeSection="ngModel" [(ngModel)]="userModel.timeSection" name="timeSection">
+      <label class="form-check-label me-3">Evening</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="nameCheck" #nameCheck="ngModel" [(ngModel)]="userModel.nameCheck" >
+      <label class="form-check-label me-3">Send Me New Offers</label>
+    </div>
+    <input type="submit" class="btn btn-success" value="Submit">
+  </form>
+</div>

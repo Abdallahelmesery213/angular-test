@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SquarePipe } from './components/Pipes/square.pipe';
@@ -15,6 +15,7 @@ import { DepartmentDetailsComponent } from './components/department-details/depa
 import { DepartmentsComponent } from './components/departments/departments.component';
 import { DepartmentOverviewComponent } from './components/department-overview/department-overview.component';
 import { DepartmentContactComponent } from './components/department-contact/department-contact.component';
+import { TmplDrvnFrmComponent } from './components/tmpl-drvn-frm/tmpl-drvn-frm.component';
 
 @NgModule({
   declarations: [
@@ -29,9 +30,11 @@ import { DepartmentContactComponent } from './components/department-contact/depa
     DepartmentDetailsComponent,
     DepartmentsComponent,
     DepartmentOverviewComponent,
-    DepartmentContactComponent
+    DepartmentContactComponent,
+    TmplDrvnFrmComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
