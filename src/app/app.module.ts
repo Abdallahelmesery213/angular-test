@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SquarePipe } from './components/Pipes/square.pipe';
@@ -16,6 +16,7 @@ import { DepartmentsComponent } from './components/departments/departments.compo
 import { DepartmentOverviewComponent } from './components/department-overview/department-overview.component';
 import { DepartmentContactComponent } from './components/department-contact/department-contact.component';
 import { TmplDrvnFrmComponent } from './components/tmpl-drvn-frm/tmpl-drvn-frm.component';
+import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +32,15 @@ import { TmplDrvnFrmComponent } from './components/tmpl-drvn-frm/tmpl-drvn-frm.c
     DepartmentsComponent,
     DepartmentOverviewComponent,
     DepartmentContactComponent,
-    TmplDrvnFrmComponent
+    TmplDrvnFrmComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
