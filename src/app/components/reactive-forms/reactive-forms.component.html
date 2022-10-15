@@ -3,11 +3,12 @@
     <div class="form-group">
       <label class="form-label">User Name:</label>
       <input [class.is-invalid]="registerationForm.get('userName')?.invalid && registerationForm.get('userName')?.touched" type="text" formControlName="userName" class="form-control">
+      <!-- simple validation -->
       <div *ngIf="registerationForm.get('userName')?.invalid && registerationForm.get('userName')?.touched">
-
         <small *ngIf="registerationForm.get('userName')?.errors?.['required']">user name is required</small>
-        <small *ngIf="getUserName()?.errors?.['minlength']">user name must be at least 5 character</small>
-
+        <small *ngIf="getUserName()?.errors?.['minlength']">user name must be at least 4 character</small>
+        <!-- custom validate -->
+        <small *ngIf="registerationForm.get('userName')?.errors?.['ForbiddenName']">admin is not allowed</small>
       </div>
     </div>
     <div class="form-group">
