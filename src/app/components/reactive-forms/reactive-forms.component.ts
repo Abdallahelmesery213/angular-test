@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { confirmPassValid } from 'src/app/Validators/confirmPass';
 import { forbiddenNameValidtor } from 'src/app/Validators/ForbiddenName';
 
 @Component({
@@ -31,7 +32,7 @@ export class ReactiveFormsComponent implements OnInit {
       street: [''],
       postalCode: ['']
     })
-  })
+  }, {validator: [confirmPassValid]})
   // method to less save code in html
   getUserName(){
     return this.registerationForm.get('userName')

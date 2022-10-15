@@ -18,6 +18,7 @@
     <div class="form-group">
       <label class="form-label">Confirm Password:</label>
       <input type="password" formControlName="confirmPass" class="form-control">
+      <small *ngIf="registerationForm?.errors?.['misMatch']">confirm Password not match password</small>
     </div>
     <!-- nested form group (( formGroupName="" )) -->
     <div formGroupName="addressFormGrp">
