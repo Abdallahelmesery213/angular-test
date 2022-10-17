@@ -35,6 +35,15 @@
         <input type="text" formControlName="postalCode" class="form-control">
       </div>
     </div>
+    <div class="form-group">
+      <label class="form-label"> Email </label>
+      <input type="text" [class.is-invalid]="registerationForm.get('email')?.touched && registerationForm.get('email')?.invalid" formControlName="email" class="form-control">
+      <small [class.d-none]="registerationForm.get('email')?.untouched || registerationForm.get('email')?.valid">email is Required</small>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" formControlName="subscribe" (click)="setEmailValidator()" class="form-check-input me-4" id="chkbox">
+      <label class="form-check-label" for="chkbox"> Send Me New Offers </label>
+    </div>
     <div class="row">
       <div class="col-md-6">
         <input type="submit" value="Submit" class="btn btn-primary">

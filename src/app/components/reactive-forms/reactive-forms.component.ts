@@ -27,6 +27,8 @@ export class ReactiveFormsComponent implements OnInit {
     userName: ['', [Validators.required, Validators.minLength(4), forbiddenNameValidtor]],
     password: [''],
     confirmPass: [''],
+    email:[''],
+    subscribe:[false],
     addressFormGrp: this.fb.group({
       city: [''],
       street: [''],
@@ -37,8 +39,6 @@ export class ReactiveFormsComponent implements OnInit {
   getUserName(){
     return this.registerationForm.get('userName')
   }
-
-
 
   loadData(){
     this.registerationForm.setValue({
@@ -65,6 +65,19 @@ export class ReactiveFormsComponent implements OnInit {
   //     }
   //   })
   // }
+
+  setEmailValidator(){
+    this.registerationForm.get('subscribe')?.valueChanges.subscribe(checkedValue => {
+      const email = this.registerationForm.get('email');
+      if (checkedValue){
+        email?.setValidators(Validators.required)
+      }
+      else {
+        email?.clearValidators()
+      }
+      email?.updateValueAndValidity()
+    })
+  }
 
   ngOnInit(): void {
   }

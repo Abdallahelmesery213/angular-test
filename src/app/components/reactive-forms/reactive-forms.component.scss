@@ -1,6 +1,9 @@
 .is-invalid{
-  border: 1px solid red;
+  border: 1px solid red !important;
 }
 small{
   color: red;
+}
+.d-none{
+  display: none;
 }
