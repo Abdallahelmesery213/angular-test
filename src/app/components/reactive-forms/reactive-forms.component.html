@@ -40,6 +40,14 @@
       <input type="text" [class.is-invalid]="registerationForm.get('email')?.touched && registerationForm.get('email')?.invalid" formControlName="email" class="form-control">
       <small [class.d-none]="registerationForm.get('email')?.untouched || registerationForm.get('email')?.valid">email is Required</small>
     </div>
+    <!-- add dynamic control -->
+    <div formArrayName="alternativeEmail" *ngFor="let item of alternativeEmail.controls; let i=index">
+      <div class="form-group">
+        <label class="form-label">Alternative Email Number {{i+1}}</label>
+        <input type="text" class="form-control" [formControlName]="i" />
+      </div>
+    </div>
+    <button (click)="addAnotherEmail()" class="btn btn-primary">Add Another Email</button>
     <div class="form-check">
       <input type="checkbox" formControlName="subscribe" (click)="setEmailValidator()" class="form-check-input me-4" id="chkbox">
       <label class="form-check-label" for="chkbox"> Send Me New Offers </label>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { confirmPassValid } from 'src/app/Validators/confirmPass';
 import { forbiddenNameValidtor } from 'src/app/Validators/ForbiddenName';
 
@@ -29,12 +29,21 @@ export class ReactiveFormsComponent implements OnInit {
     confirmPass: [''],
     email:[''],
     subscribe:[false],
+    alternativeEmails: this.fb.array([]), // store alternative emails
     addressFormGrp: this.fb.group({
       city: [''],
       street: [''],
       postalCode: ['']
     })
   }, {validator: [confirmPassValid]})
+
+  get alternativeEmail(){
+    return this.registerationForm.get('alternativeEmails') as FormArray;
+  }
+  addAnotherEmail(){
+    this.alternativeEmail.push(this.fb.control(''))
+  }
+
   // method to less save code in html
   getUserName(){
     return this.registerationForm.get('userName')
