@@ -17,6 +17,9 @@ import { DepartmentOverviewComponent } from './components/department-overview/de
 import { DepartmentContactComponent } from './components/department-contact/department-contact.component';
 import { TmplDrvnFrmComponent } from './components/tmpl-drvn-frm/tmpl-drvn-frm.component';
 import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { ReactiveFormsComponent } from './components/reactive-forms/reactive-for
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
