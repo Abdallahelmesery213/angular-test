@@ -27,5 +27,17 @@
 
   <button mat-raised-button color="primary">Primary</button>
   <button mat-fab disableRipple>Fab</button>
+  <mat-button-toggle #toggleBtn checked>Bold</mat-button-toggle>{{toggleBtn.checked}} <br>
+
+  <mat-button-toggle-group #group="matButtonToggleGroup" multiple="">
+    <mat-button-toggle value="React">React</mat-button-toggle>
+    <mat-button-toggle value="Angular">Angular</mat-button-toggle>
+    <mat-button-toggle value="Vue">Vue</mat-button-toggle>
+  </mat-button-toggle-group>
+  <div>You Selected: {{group.value}}</div>
+
+  <mat-icon color="primary">home</mat-icon>
+
+
 </div>
 
