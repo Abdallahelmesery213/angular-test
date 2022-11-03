@@ -18,25 +18,73 @@
 
   <!-- <app-reactive-forms></app-reactive-forms> -->
 
-  <p>test</p>
-  <div class="mat-display-4"> This is Display 4</div>
+  <!-- <div class="mat-display-4"> This is Display 4</div>
   <div class="mat-display-3"> This is Display 3</div>
-
   <div class="mat-headline"> This is Display 1</div>
-  <div class="mat-title"> This is title</div>
+  <div class="mat-title"> This is title</div> -->
 
-  <button mat-raised-button color="primary">Primary</button>
+  <!-- <button mat-raised-button color="primary">Primary</button>
   <button mat-fab disableRipple>Fab</button>
-  <mat-button-toggle #toggleBtn checked>Bold</mat-button-toggle>{{toggleBtn.checked}} <br>
+  <mat-button-toggle #toggleBtn checked>Bold</mat-button-toggle>{{toggleBtn.checked}} <br> -->
 
-  <mat-button-toggle-group #group="matButtonToggleGroup" multiple="">
+  <!-- <mat-button-toggle-group #group="matButtonToggleGroup" multiple="">
     <mat-button-toggle value="React">React</mat-button-toggle>
     <mat-button-toggle value="Angular">Angular</mat-button-toggle>
     <mat-button-toggle value="Vue">Vue</mat-button-toggle>
   </mat-button-toggle-group>
-  <div>You Selected: {{group.value}}</div>
+  <div>You Selected: {{group.value}}</div> -->
 
-  <mat-icon color="primary">home</mat-icon>
+  <!-- <mat-icon color="primary">home</mat-icon>
+
+  <div>
+    <span matBadge="10" matBadgeOverlap="false">notification</span>
+  </div>
+  <div>
+    <span matBadge="10" matBadgePosition="below after">notification</span>
+  </div> -->
+
+  <!-- <mat-spinner *ngIf="spinner"></mat-spinner>
+  <button (click)="loadData()">load data</button> -->
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" [(opened)]="opend">Menu</mat-sidenav>
+    <mat-sidenav-content>
+      <!-- methods of sidenav -->
+      <mat-icon fontIcon="menu" (click)="sidenav.toggle()"></mat-icon>
+      <!-- <button (click)="sidenav.open()">open</button>
+      <button (click)="sidenav.close()">close</button> -->
+      <main>Main Page</main>
+      <br>
+      <!-- another method [not good for me]-->
+      <!-- <button (click)="opend =!opend">Toggle Opend</button> -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="Front">FrontEnd</button>
+    <button mat-menu-item>BackEnd</button>
+  </mat-menu>
+  <mat-menu #Front="matMenu">
+    <button mat-menu-item>Angular</button>
+    <button mat-menu-item>React</button>
+    <button mat-menu-item>Vue</button>
+  </mat-menu>
+
+  <mat-list>
+    <mat-list-item>
+      <mat-icon mat-list-icon>folder</mat-icon>
+      <div mat-line>Photos</div>
+      <div mat-line>{{ 1/11/2022 | date}}</div>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-grid-list cols="4" rowHeight="100px" gutterSize="10px">
+    <mat-grid-tile colspan="2" rowspan="2">Tile 1</mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="2">Tile 2</mat-grid-tile>
+    <mat-grid-tile>Tile 3</mat-grid-tile>
+    <mat-grid-tile>Tile 4</mat-grid-tile>
+  </mat-grid-list>
 
 
 </div>

@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+  spinner = false;
+  loadData(){
+    this.spinner = true;
+    setTimeout(()=> {
+      this.spinner = false;
+    },5000)
+  }
+  opend: boolean = false;
 }
