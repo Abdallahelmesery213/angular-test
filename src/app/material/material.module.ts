@@ -10,11 +10,19 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 
 @NgModule({
   imports: [],
   exports: [MatButtonModule, MatButtonToggleModule, MatIconModule, MatBadgeModule, MatProgressSpinnerModule,
-    MatSidenavModule, MatMenuModule, MatListModule, MatGridListModule,
+    MatSidenavModule, MatMenuModule, MatListModule, MatGridListModule,MatTabsModule,MatStepperModule,
+    MatFormFieldModule, MatInputModule, MatSelectModule,MatAutocompleteModule
   ]
 })
 export class MaterialModule { }

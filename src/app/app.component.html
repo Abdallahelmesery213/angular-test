@@ -79,12 +79,87 @@
     </mat-list-item>
   </mat-list>
 
-  <mat-grid-list cols="4" rowHeight="100px" gutterSize="10px">
+  <!-- <mat-grid-list cols="4" rowHeight="100px" gutterSize="10px">
     <mat-grid-tile colspan="2" rowspan="2">Tile 1</mat-grid-tile>
     <mat-grid-tile colspan="1" rowspan="2">Tile 2</mat-grid-tile>
     <mat-grid-tile>Tile 3</mat-grid-tile>
     <mat-grid-tile>Tile 4</mat-grid-tile>
-  </mat-grid-list>
+  </mat-grid-list> -->
+
+  <!-- <mat-tab-group #tabsRef>
+    <mat-tab label="one"> content1 </mat-tab>
+    <mat-tab label="two"> content2 </mat-tab>
+    <mat-tab label="three"> content3</mat-tab>
+  </mat-tab-group>
+  {{tabsRef.selectedIndex}} -->
+
+  <mat-horizontal-stepper labelPosition="bottom">
+    <mat-step label="step1">step one</mat-step>
+    <mat-step label="step2">
+      <p>step two</p>
+      <div>
+        <button matStepperPrevious mat-button>back</button>
+        <button matStepperNext mat-button>next</button>
+      </div>
+    </mat-step>
+    <mat-step label="step3">step three</mat-step>
+  </mat-horizontal-stepper>
+
+  <mat-form-field hideRequiredMarker appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput required/>
+    <mat-hint align="end" >min 6 character</mat-hint>
+  </mat-form-field> <br>
+
+  <!-- <mat-form-field>
+    <mat-label>Tobic</mat-label>
+    <mat-select [(value)]="selectedValue" >
+      <mat-option>please select</mat-option>
+      <mat-option value="react">react</mat-option>
+      <mat-option value="angular">angular</mat-option>
+      <mat-option value="vue">vue</mat-option>
+    </mat-select>
+  </mat-form-field>
+  {{selectedValue}} <br>
+
+  <mat-form-field>
+    <mat-label>Tobic</mat-label>
+    <mat-select multiple>
+      <mat-optgroup label="web">
+        <mat-option value="react">react</mat-option>
+        <mat-option value="angular">angular</mat-option>
+        <mat-option value="vue">vue</mat-option>
+      </mat-optgroup>
+      <mat-optgroup label="mobile">
+        <mat-option value="reactNative">react native</mat-option>
+        <mat-option value="ios">ios</mat-option>
+      </mat-optgroup>
+    </mat-select>
+  </mat-form-field> -->
+
+  <form>
+    <mat-form-field>
+      <input type="text" matInput [matAutocomplete]="auto" />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of autoCompOptions" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+  <form>
+    <mat-form-field>
+      <input type="text" matInput [matAutocomplete]="auto" />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of autoCompOptions" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+
 
 
 </div>

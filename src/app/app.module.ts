@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,7 @@ import { MaterialModule } from './material/material.module';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

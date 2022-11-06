@@ -14,4 +14,11 @@ export class AppComponent {
     },5000)
   }
   opend: boolean = false;
+  selectedValue: string = '';
+  autoCompOptions: string[] = ["Angular", "React", "Vue"];
+  autoObject = [
+    {name: "angular"},
+    {name: "react"},
+    {name: "vue"}
+  ]
 }
