@@ -159,6 +159,15 @@
     </mat-form-field>
   </form>
 
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" [matDatepickerFilter]="filterSatSunDay" >
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field> <br>
+
+  <button (click)="openSnackbar('snackbar message', 'Dismiss')" mat-button >open sanckbar</button>
+
 
 
 
