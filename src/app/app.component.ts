@@ -1,4 +1,6 @@
+import { DialogContentComponent } from './components/dialog-content/dialog-content.component';
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-root',
@@ -6,7 +8,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private snackBar: MatSnackBar){}
+  constructor
+  (
+    private snackBar: MatSnackBar,
+    public dialog: MatDialog
+  ){}
   title = 'my-app';
   spinner = false;
   loadData(){
@@ -29,5 +35,11 @@ export class AppComponent {
   }
   openSnackbar(msg: string, action:string){
     this.snackBar.open(msg, action, {duration:2000});
+  }
+  openDialog(){
+    let dialogRef = this.dialog.open(DialogContentComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`dialog result: ${result}`)
+    })
   }
 }

@@ -19,8 +19,7 @@ import { TmplDrvnFrmComponent } from './components/tmpl-drvn-frm/tmpl-drvn-frm.c
 import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
-
-
+import { DialogContentComponent } from './components/dialog-content/dialog-content.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +36,8 @@ import { MaterialModule } from './material/material.module';
     DepartmentOverviewComponent,
     DepartmentContactComponent,
     TmplDrvnFrmComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    DialogContentComponent
   ],
   imports: [
     FormsModule,
@@ -48,6 +48,7 @@ import { MaterialModule } from './material/material.module';
     BrowserAnimationsModule,
     MaterialModule,
   ],
+  entryComponents: [DialogContentComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
